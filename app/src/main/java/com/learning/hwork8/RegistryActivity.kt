@@ -11,6 +11,7 @@ import com.learning.hwork8.databinding.ActivityRegistryBinding
 
 
 class RegistryActivity : AppCompatActivity() {
+    private val digits = listOf('1', '2', '3', '4', '5', '6', '7', '8', '9', '0')
     private lateinit var binding: ActivityRegistryBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +19,50 @@ class RegistryActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setRedAsterisks()
+
+        binding.btRegister.setOnClickListener{
+            controlBlankFields()
+            controlIdentificationNumberField()
+            controlPostalCodeField()
+        }
+    }
+
+    private fun controlPostalCodeField() {
+        for (char in binding.edtPostalCode.text) {
+            if (char !in digits) {
+                binding.edtPostalCode.error = getString(R.string.errPostalCodeField)
+            }
+        }
+    }
+
+    private fun controlIdentificationNumberField() {
+        if (binding.edtIdentificationNumber.text.length != 10) {
+            binding.edtIdentificationNumber.error = getString(R.string.err10digitsIdentificationNumberField)
+        } else {
+            for (char in binding.edtIdentificationNumber.text) {
+                if (char !in digits) {
+                    binding.edtIdentificationNumber.error = getString(R.string.errNumericIdentificationNumberField)
+                }
+            }
+        }
+    }
+
+    private fun controlBlankFields() {
+        if (binding.edtFullName.text.isNullOrBlank()) {
+            binding.edtFullName.error = getString(R.string.errEmptyFields)
+        }
+        if (binding.edtIdentificationNumber.text.isNullOrBlank()) {
+            binding.edtIdentificationNumber.error = getString(R.string.errEmptyFields)
+        }
+        if (binding.edtBirthPlace.text.isNullOrBlank()) {
+            binding.edtBirthPlace.error = getString(R.string.errEmptyFields)
+        }
+        if (binding.edtAddress.text.isNullOrBlank()) {
+            binding.edtAddress.error = getString(R.string.errEmptyFields)
+        }
+        if (binding.edtPostalCode.text.isNullOrBlank()) {
+            binding.edtPostalCode.error = getString(R.string.errEmptyFields)
+        }
     }
 
     private fun setRedAsterisks() {

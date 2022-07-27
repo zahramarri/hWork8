@@ -10,4 +10,8 @@
     <string name="rdbFemaleText">زن</string>
     <string name="rdbMaleText">مرد</string>
     <string name="btRegisterText">ثبت اطلاعات</string>
+    <string name="errEmptyFields">لطفا فیلد خالی را پر کنید.</string>
+    <string name="errPostalCodeField">کد پستی باید از نوع عدد باشد.</string>
+    <string name="err10digitsIdentificationNumberField">طول کد ملی باید ده رقم باشد.</string>
+    <string name="errNumericIdentificationNumberField">کد ملی باید از نوع عدد باشد.</string>
 </resources>
