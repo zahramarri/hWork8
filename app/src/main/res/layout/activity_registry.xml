@@ -17,6 +17,7 @@
        android:layout_margin="8dp"/>
 
     <EditText
+        android:id="@+id/edtFullName"
         android:paddingHorizontal="8dp"
         android:hint="@string/edtFullNameHintText"
         android:background="@drawable/edit_text_border"
@@ -26,6 +27,7 @@
         android:layout_margin="8dp"/>
 
     <EditText
+        android:id="@+id/edtIdentificationNumber"
         android:paddingHorizontal="8dp"
         android:hint="@string/edtIdentificationNumberHintText"
         android:background="@drawable/edit_text_border"
@@ -35,6 +37,7 @@
         android:layout_margin="8dp"/>
 
     <EditText
+        android:id="@+id/edtBirthPlace"
         android:paddingHorizontal="8dp"
         android:hint="@string/edtBirthPlaceHintText"
         android:background="@drawable/edit_text_border"
@@ -44,6 +47,7 @@
         android:layout_margin="8dp"/>
 
     <EditText
+        android:id="@+id/edtAddress"
         android:paddingHorizontal="8dp"
         android:hint="@string/edtAddressHintText"
         android:background="@drawable/edit_text_border"
@@ -53,6 +57,7 @@
         android:layout_margin="8dp"/>
 
     <EditText
+        android:id="@+id/edtPostalCode"
         android:paddingHorizontal="8dp"
         android:hint="@string/edtPostalCodeHintText"
         android:background="@drawable/edit_text_border"
