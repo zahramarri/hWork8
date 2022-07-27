@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">hWork8</string>
+    <string name="tvFormTitleText">فرم ثبت اطلاعات</string>
+    <string name="edtFullNameHintText">نام و نام خانوادگی</string>
+    <string name="edtIdentificationNumberHintText">کد ملی</string>
+    <string name="edtBirthPlaceHintText">محل تولد</string>
+    <string name="edtAddressHintText">آدرس</string>
+    <string name="edtPostalCodeHintText">کد پستی</string>
+    <string name="tvGenderText">جنسیت:</string>
+    <string name="rdbFemaleText">زن</string>
+    <string name="rdbMaleText">مرد</string>
+    <string name="btRegisterText">ثبت اطلاعات</string>
 </resources>
