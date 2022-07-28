@@ -18,6 +18,7 @@
         android:textColor="@color/green_400" />
 
     <EditText
+        android:id="@+id/edtIdentificationNumber"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="8dp"
@@ -27,6 +28,7 @@
         android:paddingHorizontal="8dp" />
 
     <EditText
+        android:id="@+id/edtBirthPlace"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="8dp"
@@ -36,6 +38,7 @@
         android:paddingHorizontal="8dp" />
 
     <EditText
+        android:id="@+id/edtAddress"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="8dp"
@@ -45,6 +48,7 @@
         android:paddingHorizontal="8dp" />
 
     <EditText
+        android:id="@+id/edtPostalCode"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="8dp"
@@ -54,6 +58,7 @@
         android:paddingHorizontal="8dp" />
 
     <EditText
+        android:id="@+id/edtGender"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="8dp"

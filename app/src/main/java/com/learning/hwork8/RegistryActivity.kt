@@ -25,6 +25,8 @@ class RegistryActivity : AppCompatActivity() {
             controlIdentificationNumberField()
             controlPostalCodeField()
         }
+
+        writeInSharedPref()
     }
 
     private fun controlPostalCodeField() {
@@ -89,5 +91,21 @@ class RegistryActivity : AppCompatActivity() {
         )
 
         editText.hint = builder
+    }
+
+    private fun writeInSharedPref() {
+        val sharedPref = getPreferences(MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putString("edtIdentificationNumber", binding.edtIdentificationNumber.text.toString())
+        editor.putString("edtBirthPlace", binding.edtBirthPlace.text.toString())
+        editor.putString("edtAddress", binding.edtAddress.text.toString())
+        editor.putString("edtPostalCode", binding.edtPostalCode.text.toString())
+        val gender: String = if (binding.rbFemale.isChecked) {
+            getString(R.string.genderFemale)
+        } else {
+            getString(R.string.genderMale)
+        }
+        editor.putString("edtGender", gender)
+        editor.apply()
     }
 }

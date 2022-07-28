@@ -16,4 +16,6 @@
     <string name="errNumericIdentificationNumberField">کد ملی باید از نوع عدد باشد.</string>
     <string name="tvFormTitle2Text">مشاهده اطلاعات ثبت شده</string>
     <string name="btEditInformationText">تغییر اطلاعات</string>
+    <string name="genderFemale">مونث</string>
+    <string name="genderMale">مذکر</string>
 </resources>
