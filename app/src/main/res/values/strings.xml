@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">hWork8</string>
-    <string name="tvFormTitleText">فرم ثبت اطلاعات</string>
+    <string name="tvFormTitle1Text">فرم ثبت اطلاعات</string>
     <string name="edtFullNameHintText">نام و نام خانوادگی</string>
     <string name="edtIdentificationNumberHintText">کد ملی</string>
     <string name="edtBirthPlaceHintText">محل تولد</string>
@@ -14,4 +14,6 @@
     <string name="errPostalCodeField">کد پستی باید از نوع عدد باشد.</string>
     <string name="err10digitsIdentificationNumberField">طول کد ملی باید ده رقم باشد.</string>
     <string name="errNumericIdentificationNumberField">کد ملی باید از نوع عدد باشد.</string>
+    <string name="tvFormTitle2Text">مشاهده اطلاعات ثبت شده</string>
+    <string name="btEditInformationText">تغییر اطلاعات</string>
 </resources>

@@ -6,85 +6,86 @@
     android:orientation="vertical"
     tools:context=".RegistryActivity">
 
-   <TextView
-       android:text="@string/tvFormTitleText"
-       android:gravity="fill"
-       android:paddingHorizontal="8dp"
-       android:background="@color/green_100"
-       android:layout_width="match_parent"
-       android:layout_height="0dp"
-       android:layout_weight="0.6"
-       android:layout_margin="8dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:layout_weight="0.6"
+        android:background="@color/green_100"
+        android:gravity="fill"
+        android:paddingHorizontal="8dp"
+        android:text="@string/tvFormTitle1Text"
+        android:textColor="@color/green_400" />
 
     <EditText
         android:id="@+id/edtFullName"
-        android:paddingHorizontal="8dp"
-        android:hint="@string/edtFullNameHintText"
-        android:background="@drawable/edit_text_border"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="8dp"
         android:layout_weight="1"
-        android:layout_margin="8dp"/>
+        android:background="@drawable/edit_text_border"
+        android:hint="@string/edtFullNameHintText"
+        android:paddingHorizontal="8dp" />
 
     <EditText
         android:id="@+id/edtIdentificationNumber"
-        android:paddingHorizontal="8dp"
-        android:hint="@string/edtIdentificationNumberHintText"
-        android:background="@drawable/edit_text_border"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="8dp"
         android:layout_weight="1"
-        android:layout_margin="8dp"/>
+        android:background="@drawable/edit_text_border"
+        android:hint="@string/edtIdentificationNumberHintText"
+        android:paddingHorizontal="8dp" />
 
     <EditText
         android:id="@+id/edtBirthPlace"
-        android:paddingHorizontal="8dp"
-        android:hint="@string/edtBirthPlaceHintText"
-        android:background="@drawable/edit_text_border"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="8dp"
         android:layout_weight="1"
-        android:layout_margin="8dp"/>
+        android:background="@drawable/edit_text_border"
+        android:hint="@string/edtBirthPlaceHintText"
+        android:paddingHorizontal="8dp" />
 
     <EditText
         android:id="@+id/edtAddress"
-        android:paddingHorizontal="8dp"
-        android:hint="@string/edtAddressHintText"
-        android:background="@drawable/edit_text_border"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="8dp"
         android:layout_weight="1"
-        android:layout_margin="8dp"/>
+        android:background="@drawable/edit_text_border"
+        android:hint="@string/edtAddressHintText"
+        android:paddingHorizontal="8dp" />
 
     <EditText
         android:id="@+id/edtPostalCode"
-        android:paddingHorizontal="8dp"
-        android:hint="@string/edtPostalCodeHintText"
-        android:background="@drawable/edit_text_border"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="8dp"
         android:layout_weight="1"
-        android:layout_margin="8dp"/>
+        android:background="@drawable/edit_text_border"
+        android:hint="@string/edtPostalCodeHintText"
+        android:paddingHorizontal="8dp" />
 
     <TextView
-        android:text="@string/tvGenderText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="8dp"
         android:layout_weight="0.6"
-        android:layout_margin="8dp"/>
+        android:text="@string/tvGenderText" />
 
     <RadioGroup
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="8dp"
         android:layout_weight="1"
-        android:layout_margin="8dp">
+        android:orientation="horizontal">
 
         <RadioButton
-            android:text="@string/rdbFemaleText"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:text="@string/rdbFemaleText" />
 
         <RadioButton
             android:layout_width="0dp"
@@ -96,16 +97,16 @@
 
     <Button
         android:id="@+id/btRegister"
-        android:text="@string/btRegisterText"
-        android:backgroundTint="@color/pink_400"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="8dp"
         android:layout_weight="1"
-        android:layout_margin="8dp"/>
+        android:backgroundTint="@color/pink_400"
+        android:text="@string/btRegisterText" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        android:layout_weight="2"/>
+        android:layout_weight="2"
+        android:orientation="vertical" />
 </LinearLayout>
