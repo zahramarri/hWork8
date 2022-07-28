@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.learning.hwork8.databinding.ActivityRegistryBinding
 
 lateinit var sharedPref: SharedPreferences
+
 class RegistryActivity : AppCompatActivity() {
     private val digits = listOf('1', '2', '3', '4', '5', '6', '7', '8', '9', '0')
     private lateinit var binding: ActivityRegistryBinding
@@ -27,13 +28,24 @@ class RegistryActivity : AppCompatActivity() {
 
         setRedAsterisks()
 
-        binding.btRegister.setOnClickListener{
+        binding.btRegister.setOnClickListener {
             controlBlankFields()
             controlIdentificationNumberField()
             controlPostalCodeField()
-            writeInSharedPref()
-            startActivityEditInformation()
+            if (noFieldBlank()) {
+                writeInSharedPref()
+                startActivityEditInformation()
+            }
         }
+    }
+
+    private fun noFieldBlank(): Boolean {
+        return (binding.edtIdentificationNumber.error == null &&
+                binding.edtFullName.error == null &&
+                binding.edtBirthPlace.error == null &&
+                binding.edtPostalCode.error == null &&
+                binding.edtAddress.error == null &&
+                (binding.rbFemale.isChecked || binding.rbMale.isChecked))
     }
 
     private fun checkInformationAvailability(): Boolean {
@@ -42,7 +54,7 @@ class RegistryActivity : AppCompatActivity() {
                 sharedPref.getString("edtAddress", "Empty") != "Empty" &&
                 sharedPref.getString("edtPostalCode", "Empty") != "Empty" &&
                 sharedPref.getString("edtGender", "Empty") != "Empty")
-        }
+    }
 
     private fun startActivityEditInformation() {
         val intent = Intent(this, EditInformationActivity::class.java)
@@ -59,11 +71,13 @@ class RegistryActivity : AppCompatActivity() {
 
     private fun controlIdentificationNumberField() {
         if (binding.edtIdentificationNumber.text.length != 10) {
-            binding.edtIdentificationNumber.error = getString(R.string.err10digitsIdentificationNumberField)
+            binding.edtIdentificationNumber.error =
+                getString(R.string.err10digitsIdentificationNumberField)
         } else {
             for (char in binding.edtIdentificationNumber.text) {
                 if (char !in digits) {
-                    binding.edtIdentificationNumber.error = getString(R.string.errNumericIdentificationNumberField)
+                    binding.edtIdentificationNumber.error =
+                        getString(R.string.errNumericIdentificationNumberField)
                 }
             }
         }
@@ -84,6 +98,9 @@ class RegistryActivity : AppCompatActivity() {
         }
         if (binding.edtPostalCode.text.isNullOrBlank()) {
             binding.edtPostalCode.error = getString(R.string.errEmptyFields)
+        }
+        if (!binding.rbFemale.isChecked && !binding.rbMale.isChecked) {
+            binding.tvGender.error = getString(R.string.errGenderField)
         }
     }
 

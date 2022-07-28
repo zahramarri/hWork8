@@ -1,5 +1,6 @@
 package com.learning.hwork8
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -24,6 +25,16 @@ class EditInformationActivity : AppCompatActivity() {
             writeInSharedPref()
             setAllEditTextsDisabled()
         }
+
+        binding.btnEnterNewly.setOnClickListener {
+            sharedPref.edit().clear().apply()
+            startActivityRegistry()
+        }
+    }
+
+    private fun startActivityRegistry() {
+        val intent = Intent(this, RegistryActivity::class.java)
+        startActivity(intent)
     }
 
     private fun writeInSharedPref() {

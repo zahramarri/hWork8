@@ -18,4 +18,6 @@
     <string name="btEditInformationText">تغییر اطلاعات</string>
     <string name="genderFemale">مونث</string>
     <string name="genderMale">مذکر</string>
+    <string name="btnEnterNewly">ورود کاربر جدید</string>
+    <string name="errGenderField">لطفا جنسیت خود را انتخاب کنید.</string>
 </resources>

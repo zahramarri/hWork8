@@ -11,4 +11,5 @@
     <color name="green_400">#4CAF50</color>
     <color name="pink_400">#FF00FF</color>
     <color name="grey_100">#F5F5F5</color>
+    <color name="orange_200">#F44336</color>
 </resources>
