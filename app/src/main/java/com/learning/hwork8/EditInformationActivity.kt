@@ -2,6 +2,7 @@ package com.learning.hwork8
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.learning.hwork8.databinding.ActivityEditInformationBinding
 
 class EditInformationActivity : AppCompatActivity() {
@@ -12,6 +13,19 @@ class EditInformationActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setAllTexts()
+
+        binding.btnEditInformation.setOnClickListener{
+            setAllEditTextsEnabled()
+        }
+    }
+
+    private fun setAllEditTextsEnabled() {
+        binding.edtIdentificationNumber.isEnabled = true
+        binding.edtIdentificationNumber.isEnabled = true
+        binding.edtBirthPlace.isEnabled = true
+        binding.edtAddress.isEnabled = true
+        binding.edtPostalCode.isEnabled = true
+        binding.edtGender.isEnabled = true
     }
 
     private fun setAllTexts() {

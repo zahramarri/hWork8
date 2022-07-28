@@ -19,12 +19,12 @@
 
     <EditText
         android:id="@+id/edtIdentificationNumber"
+        android:enabled="false"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="8dp"
         android:layout_weight="1"
         android:background="@color/grey_100"
-        android:focusable="false"
         android:paddingHorizontal="8dp" />
 
     <EditText
@@ -34,7 +34,7 @@
         android:layout_margin="8dp"
         android:layout_weight="1"
         android:background="@color/grey_100"
-        android:focusable="false"
+        android:enabled="false"
         android:paddingHorizontal="8dp" />
 
     <EditText
@@ -44,7 +44,7 @@
         android:layout_margin="8dp"
         android:layout_weight="1"
         android:background="@color/grey_100"
-        android:focusable="false"
+        android:enabled="false"
         android:paddingHorizontal="8dp" />
 
     <EditText
@@ -54,7 +54,7 @@
         android:layout_margin="8dp"
         android:layout_weight="1"
         android:background="@color/grey_100"
-        android:focusable="false"
+        android:enabled="false"
         android:paddingHorizontal="8dp" />
 
     <EditText
@@ -64,10 +64,11 @@
         android:layout_margin="8dp"
         android:layout_weight="1"
         android:background="@color/grey_100"
-        android:focusable="false"
+        android:enabled="false"
         android:paddingHorizontal="8dp" />
 
     <Button
+        android:id="@+id/btnEditInformation"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="8dp"
