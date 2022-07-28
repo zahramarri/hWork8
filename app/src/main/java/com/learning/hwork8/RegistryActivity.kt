@@ -19,6 +19,11 @@ class RegistryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistryBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        sharedPref = getPreferences(MODE_PRIVATE)
+
+        if (checkInformationAvailability()) {
+            startActivityEditInformation()
+        }
 
         setRedAsterisks()
 
@@ -29,8 +34,15 @@ class RegistryActivity : AppCompatActivity() {
             writeInSharedPref()
             startActivityEditInformation()
         }
-
     }
+
+    private fun checkInformationAvailability(): Boolean {
+        return (sharedPref.getString("edtIdentificationNumber", "Empty") != "Empty" &&
+                sharedPref.getString("edtBirthPlace", "Empty") != "Empty" &&
+                sharedPref.getString("edtAddress", "Empty") != "Empty" &&
+                sharedPref.getString("edtPostalCode", "Empty") != "Empty" &&
+                sharedPref.getString("edtGender", "Empty") != "Empty")
+        }
 
     private fun startActivityEditInformation() {
         val intent = Intent(this, EditInformationActivity::class.java)
@@ -102,7 +114,6 @@ class RegistryActivity : AppCompatActivity() {
     }
 
     private fun writeInSharedPref() {
-        sharedPref = getPreferences(MODE_PRIVATE)
         val editor = sharedPref.edit()
         editor.putString("edtIdentificationNumber", binding.edtIdentificationNumber.text.toString())
         editor.putString("edtBirthPlace", binding.edtBirthPlace.text.toString())
