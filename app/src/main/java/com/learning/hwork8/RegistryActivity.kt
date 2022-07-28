@@ -1,5 +1,7 @@
 package com.learning.hwork8
 
+import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Spannable
@@ -9,7 +11,7 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.learning.hwork8.databinding.ActivityRegistryBinding
 
-
+lateinit var sharedPref: SharedPreferences
 class RegistryActivity : AppCompatActivity() {
     private val digits = listOf('1', '2', '3', '4', '5', '6', '7', '8', '9', '0')
     private lateinit var binding: ActivityRegistryBinding
@@ -24,9 +26,15 @@ class RegistryActivity : AppCompatActivity() {
             controlBlankFields()
             controlIdentificationNumberField()
             controlPostalCodeField()
+            writeInSharedPref()
+            startActivityEditInformation()
         }
 
-        writeInSharedPref()
+    }
+
+    private fun startActivityEditInformation() {
+        val intent = Intent(this, EditInformationActivity::class.java)
+        startActivity(intent)
     }
 
     private fun controlPostalCodeField() {
@@ -94,7 +102,7 @@ class RegistryActivity : AppCompatActivity() {
     }
 
     private fun writeInSharedPref() {
-        val sharedPref = getPreferences(MODE_PRIVATE)
+        sharedPref = getPreferences(MODE_PRIVATE)
         val editor = sharedPref.edit()
         editor.putString("edtIdentificationNumber", binding.edtIdentificationNumber.text.toString())
         editor.putString("edtBirthPlace", binding.edtBirthPlace.text.toString())

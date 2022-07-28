@@ -2,7 +2,6 @@ package com.learning.hwork8
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import com.learning.hwork8.databinding.ActivityEditInformationBinding
 
 class EditInformationActivity : AppCompatActivity() {
@@ -16,15 +15,14 @@ class EditInformationActivity : AppCompatActivity() {
     }
 
     private fun setAllTexts() {
-        binding.edtIdentificationNumber.setText("کد ملی:   " + readFromSharedPref(binding.edtIdentificationNumber.id))
-        binding.edtBirthPlace.setText("محل تولد:   " + readFromSharedPref(binding.edtBirthPlace.id))
-        binding.edtAddress.setText("آدرس:   " + readFromSharedPref(binding.edtAddress.id))
-        binding.edtPostalCode.setText("کد پستی:   " + readFromSharedPref(binding.edtPostalCode.id))
-        binding.edtGender.setText("جنسیت:   " + readFromSharedPref(binding.edtGender.id))
+        binding.edtIdentificationNumber.setText("کد ملی:   " + readFromSharedPref("edtIdentificationNumber"))
+        binding.edtBirthPlace.setText("محل تولد:   " + readFromSharedPref("edtBirthPlace"))
+        binding.edtAddress.setText("آدرس:   " + readFromSharedPref("edtAddress"))
+        binding.edtPostalCode.setText("کد پستی:   " + readFromSharedPref("edtPostalCode"))
+        binding.edtGender.setText("جنسیت:   " + readFromSharedPref("edtGender"))
     }
 
-    private fun readFromSharedPref(viewId: Int): String? {
-        val sharedPref = getPreferences(MODE_PRIVATE)
-        return sharedPref.getString(viewId.toString(), "Empty")
+    private fun readFromSharedPref(key: String): String? {
+        return sharedPref.getString(key, "Empty")
     }
 }
