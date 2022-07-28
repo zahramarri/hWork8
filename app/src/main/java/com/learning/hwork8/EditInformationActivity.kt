@@ -16,7 +16,24 @@ class EditInformationActivity : AppCompatActivity() {
 
         binding.btnEditInformation.setOnClickListener{
             setAllEditTextsEnabled()
+            it.visibility = View.GONE
+            binding.btnRegister.visibility = View.VISIBLE
         }
+
+        binding.btnRegister.setOnClickListener {
+            writeInSharedPref()
+            setAllEditTextsDisabled()
+        }
+    }
+
+    private fun writeInSharedPref() {
+        val editor = sharedPref.edit()
+        editor.putString("edtIdentificationNumber", binding.edtIdentificationNumber.text.toString())
+        editor.putString("edtBirthPlace", binding.edtBirthPlace.text.toString())
+        editor.putString("edtAddress", binding.edtAddress.text.toString())
+        editor.putString("edtPostalCode", binding.edtPostalCode.text.toString())
+        editor.putString("edtGender", binding.edtGender.text.toString())
+        editor.apply()
     }
 
     private fun setAllEditTextsEnabled() {
@@ -26,6 +43,15 @@ class EditInformationActivity : AppCompatActivity() {
         binding.edtAddress.isEnabled = true
         binding.edtPostalCode.isEnabled = true
         binding.edtGender.isEnabled = true
+    }
+
+    private fun setAllEditTextsDisabled() {
+        binding.edtIdentificationNumber.isEnabled = false
+        binding.edtIdentificationNumber.isEnabled = false
+        binding.edtBirthPlace.isEnabled = false
+        binding.edtAddress.isEnabled = false
+        binding.edtPostalCode.isEnabled = false
+        binding.edtGender.isEnabled = false
     }
 
     private fun setAllTexts() {
